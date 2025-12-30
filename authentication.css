@@ -79,7 +79,7 @@ body::-webkit-scrollbar-thumb {
     padding: 2rem 5% 2rem 4%;
     display: flex;
     gap: 0.25rem;
-    height: 120px;
+    height: 140px;
 }
 
 .authentication-logo-wrapper {
@@ -203,7 +203,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .log-in-wrapper input {
-    width: 400px;
+    width: 100%;
     padding: .5rem;
     border: 1px solid #ccc;
     outline: none;
@@ -324,17 +324,24 @@ body::-webkit-scrollbar-thumb {
 /* ===================== Switch from log in to Sign up ===================== */
 .authentication-forms {
     position: relative;
-    overflow: hidden;
-    min-height: 600px;
+
+
     width: 100%;
 }
 
 /* Both forms */
-.authentication-form-main-container,
 .sign-up-container {
     position: absolute;
     inset: 0;
     transition: transform 0.6s ease, opacity 0.6s ease;
+
+}
+
+.authentication-form-main-container {
+     position: absolute;
+    inset: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+ 
 }
 
 /* Sign-In visible by default */
@@ -364,15 +371,16 @@ body::-webkit-scrollbar-thumb {
 }
 
 .sign-up-container {
-    height: calc(100vh - 140px);
+    height: calc(100vh - 280px);
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .sign-up-wrapper {
-    width: 700px;
-    height: 700px;
+    width: 500px;
+    height: 600px;
     min-width: 400px;
     background-color: var(--color-primary);
     padding: 2rem;
@@ -380,6 +388,7 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-left: 2px solid var(--color-border);
     border-top: 2px solid var(--color-border);
+
 }
 
 #backToSignIn {
@@ -405,6 +414,22 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
 }
 
+.form-container {
+    overflow: auto;
+    height: 400px;
+    width: 100%;
+    margin-top: 2rem;
+    scrollbar-width: none;
+
+    /* IE & Edge (legacy) */
+    -ms-overflow-style: none;
+    padding: 0 2px;
+}
+
+.form-container::-webkit-scrollbar {
+    display: none;
+    width: 50px;
+}
 
 .sign-up-text h3 {
     text-align: center;
@@ -422,9 +447,57 @@ body::-webkit-scrollbar-thumb {
 
 
 
+.sign-up-wrapper-form {
+    padding-bottom: .9rem;
+}
+
+.sign-up-wrapper-form label {
+    color: var(--color-text);
+    font-size: .8rem;
+    padding-bottom: .3rem;
+}
+
+.sign-up-wrapper-form input {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+    font-size: .8rem;
+    border-radius: 6px;
 
 
+}
 
+
+.sign-up-wrapper-form input::placeholder {
+    font-size: .9rem;
+}
+
+.sign-up-wrapper-form input:focus {
+    box-shadow: 0 0 0 1px var(--color-text);
+}
+
+
+.input-with-icon {
+    width: 100%;
+    position: relative;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: .5rem .5rem .5rem 2rem;
+    /* left padding for icon */
+}
+
+.input-icon {
+    position: absolute;
+    left: .6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: .9rem;
+}
 
 
 .password-hints {
@@ -442,4 +515,41 @@ body::-webkit-scrollbar-thumb {
 .hint.valid {
     color: #198754;
     /* Bootstrap success */
+}
+
+.confirm-password-msg {
+    display: none;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    color: #dc3545;
+    /* Bootstrap danger */
+}
+
+.confirm-password-msg.valid {
+    color: #198754;
+    /* success */
+}
+
+.sign-up-button{
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.sign-up-button button {
+    width: 100%;
+    border-radius: 10px;
+    padding: .4rem;
+    background-color: var(--color-border2);
+    color: var(--color-secondary2);
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sign-up-button i {
+    color: var(--color-secondary2);
+}
+
+.sign-up-button button:hover {
+    transform: translateY(-2px);
 }

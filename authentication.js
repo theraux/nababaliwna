@@ -47,6 +47,31 @@ password.addEventListener("input", () => {
     }
 });
 
+const cpassword = document.getElementById("signup-password");
+const confirmPassword = document.getElementById("confirm-password");
+const confirmMsg = document.getElementById("confirmPasswordMsg");
+
+function checkPasswordMatch() {
+    if (!confirmPassword.value) {
+        confirmMsg.style.display = "none";
+        return;
+    }
+
+    confirmMsg.style.display = "block";
+
+    if (password.value === confirmPassword.value) {
+        confirmMsg.textContent = "✔ Passwords match";
+        confirmMsg.classList.add("valid");
+    } else {
+        confirmMsg.textContent = "❌ Passwords do not match";
+        confirmMsg.classList.remove("valid");
+    }
+}
+
+password.addEventListener("input", checkPasswordMatch);
+confirmPassword.addEventListener("input", checkPasswordMatch);
+
+
 const togglePassword = document.getElementById("togglePassword");
 const passwordInput = document.getElementById("password");
 
