@@ -1,4 +1,3 @@
-
 const password = document.getElementById("password");
 const hints = document.getElementById("passwordHints");
 
@@ -11,9 +10,7 @@ password.addEventListener("focus", () => {
 });
 
 password.addEventListener("blur", () => {
-    if (password.value === "") {
-        hints.style.display = "none";
-    }
+    hints.style.display = "none";
 });
 
 password.addEventListener("input", () => {
@@ -47,6 +44,7 @@ password.addEventListener("input", () => {
     }
 });
 
+
 const cpassword = document.getElementById("signup-password");
 const confirmPassword = document.getElementById("confirm-password");
 const confirmMsg = document.getElementById("confirmPasswordMsg");
@@ -72,21 +70,15 @@ password.addEventListener("input", checkPasswordMatch);
 confirmPassword.addEventListener("input", checkPasswordMatch);
 
 
-const togglePassword = document.getElementById("togglePassword");
-const passwordInput = document.getElementById("password");
 
-togglePassword.addEventListener("click", () => {
-    const isPassword = passwordInput.type === "password";
 
-    passwordInput.type = isPassword ? "text" : "password";
-    togglePassword.classList.toggle("fa-eye");
-    togglePassword.classList.toggle("fa-eye-slash");
-});
+
 
 
 const authForms = document.getElementById("authForms");
 const signUpLink = document.getElementById("signUpLink"); // Updated to match new ID
 const backToSignInLink = document.getElementById("backToSignIn"); // New link for going back
+
 
 signUpLink.addEventListener("click", (e) => {
     e.preventDefault();
@@ -97,3 +89,52 @@ backToSignInLink.addEventListener("click", (e) => {
     e.preventDefault();
     authForms.classList.remove("show-signup");
 });
+
+
+document.querySelectorAll(".toggle-password").forEach(toggle => {
+    toggle.addEventListener("click", function () {
+        const input = this.closest(".input-with-icon")
+            .querySelector(".password-input");
+
+        const isPassword = input.type === "password";
+        input.type = isPassword ? "text" : "password";
+
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+    });
+});
+
+
+
+
+
+const sendBtn = document.getElementById("sendCodeBtn");
+const timerText = document.getElementById("timerText");
+const timerSpan = document.getElementById("timer");
+
+let countdown;
+let timeLeft = 60;
+
+sendBtn.addEventListener("click", () => {
+    // TODO: call backend API to send code
+
+    sendBtn.disabled = true;
+    timerText.style.display = "inline";
+
+    timeLeft = 60;
+    timerSpan.textContent = timeLeft;
+
+    countdown = setInterval(() => {
+        timeLeft--;
+        timerSpan.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            sendBtn.disabled = false;
+            timerText.style.display = "none";
+            sendBtn.textContent = "Resend code";
+        }
+    }, 1000);
+});
+
+

@@ -530,6 +530,76 @@ body::-webkit-scrollbar-thumb {
     /* success */
 }
 
+.terms-and-condition{
+    padding: 1rem 0 .2rem 0;
+}
+.terms-and-condition:hover .checkmark {
+    border-color: var(--color-border);
+}
+
+.terms-and-condition input:focus-visible + .checkmark {
+    outline: 2px solid var(--color-border);
+    outline-offset: 2px;
+}
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* hide native checkbox */
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* big box */
+.checkmark {
+    width: 17px;
+    height: 17px;
+    border: 2px solid var(--color-border);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+/* check icon */
+.checkmark::after {
+    content: "✔";
+    font-size: 14px;
+    color: #fff;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.2s ease;
+}
+
+/* checked state */
+.custom-checkbox input:checked + .checkmark {
+    background-color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+    opacity: 1;
+    transform: scale(1);
+}
+.checkbox-text{
+    color: var(--color-text);
+}
+.checkbox-text a{
+    color: var(--color-text);
+
+}
+.checkbox-text a:hover{
+    text-decoration: underline;
+
+}
+
+
 .sign-up-button{
     display: flex;
     justify-content: center;
@@ -553,3 +623,6 @@ body::-webkit-scrollbar-thumb {
 .sign-up-button button:hover {
     transform: translateY(-2px);
 }
+
+
+
