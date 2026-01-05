@@ -103,13 +103,70 @@
                     </div>
                 </div>
 
-                <div class="reset-password-container" id="resetPassword">
-                    <div class="reset-password-wrapper">
-                        <div class="forgot-password-inner">
+                <div class="reset-password-form-container" id="resetPassword">
+                    <div class="reset-password-form-wrapper">
+                        <div class="reset-password-inner">
                             <h3>Create a new password</h3>
-                            <h5>You’re almost back in. Set your new password.
-                            </h5>
+                            <h5>You’re almost back in. Set your new password.</h5>
                         </div>
+
+                        <form class="py-4">
+                            <div class="reset-password-container">
+                                <div class="reset-password-wrapper">
+                                    <!-- <label for="resetPassword">PASSWORD</label>
+                                    <div class="input-with-icon">
+                                        <i class="fa-regular fa-envelope input-icon bg-info"></i>
+                                        <input type="password" id="resetPassword" name="resetPassword"
+                                            placeholder="Password" required>
+                                    </div> -->
+
+                                    <label for="resetyourPassword"> NEW PASSWORD</label>
+                                    <div class="input-with-icon">
+                                        <i class="fa-solid fa-lock input-icon"></i>
+                                        <input type="password" id="resetyourPassword" name="resetyourPassword"
+                                            placeholder="New Password" required>
+                                            <i class="fa-solid fa-eye toggle-password"></i>
+
+                                    </div>
+
+
+                                    <div class="password-hints pt-3" id="resetPasswordHints">
+                                        <div class="hint" id="resetLengthHint">❌ At least 8 characters</div>
+                                        <div class="hint" id="resetNumberHint">❌ Contains a number</div>
+                                        <div class="hint" id="resetSpecialHint">❌ Contains a special character</div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div class="reset-password-wrapper">
+                                    <label for="confirmResetPassword">CONFIRM PASSWORD</label>
+                                    <div class="input-with-icon">
+                                        <i class="fa-solid fa-lock input-icon"></i>
+                                        <input type="password" id="confirmResetPassword" name="confirmResetPassword"
+                                            placeholder="Confirm Password" required>
+                                            <i class="fa-solid fa-eye toggle-password"></i>
+                                    </div>
+                                    <small class="confirm-password-msg" id="resetConfirmPasswordMsg">
+
+                                        ❌ Passwords do not match
+                                    </small>
+
+                                </div>
+
+
+                                <div class="continue-button">
+                                    <button type="submit"><i class="fa-solid fa-circle-arrow-right"></i>
+                                        Continue</button>
+                                </div>
+
+
+                            </div>
+
+                        </form>
                     </div>
 
                 </div>
@@ -120,9 +177,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-     <script src="../../assets/js/user-interface/forgot-password.js"></script>
 
+    <script src="../../assets/js/user-interface/forgot-password.js"></script>
+ 
 </body>
 
 </html>
