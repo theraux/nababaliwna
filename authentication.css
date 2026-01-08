@@ -84,15 +84,15 @@ body::-webkit-scrollbar-thumb {
 
 .authentication-logo-wrapper {
     width: 80px;
-    height: 50px;
-    display: flex;
+    height: 40px;
     overflow: hidden;
 }
 
 .authentication-logo-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
+
 }
 
 .authentication-logo-text {
@@ -103,11 +103,13 @@ body::-webkit-scrollbar-thumb {
     color: var(--color-text);
     font-size: 1.5rem;
     margin: 0%;
+
 }
 
 .authentication-logo-text h5 {
     color: var(--color-text);
     font-size: .9rem;
+
 }
 
 .go-home {
@@ -152,7 +154,6 @@ body::-webkit-scrollbar-thumb {
 .authentication-form-wrapper {
     width: 500px;
     height: 500px;
-    min-width: 400px;
     background-color: var(--color-primary);
     padding: 2rem;
     border-radius: 20px;
@@ -338,10 +339,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 .authentication-form-main-container {
-     position: absolute;
+    position: absolute;
     inset: 0;
     transition: transform 0.6s ease, opacity 0.6s ease;
- 
+
 }
 
 /* Sign-In visible by default */
@@ -381,7 +382,6 @@ body::-webkit-scrollbar-thumb {
 .sign-up-wrapper {
     width: 500px;
     height: 600px;
-    min-width: 400px;
     background-color: var(--color-primary);
     padding: 2rem;
     border-radius: 20px;
@@ -421,15 +421,28 @@ body::-webkit-scrollbar-thumb {
     margin-top: 2rem;
     scrollbar-width: none;
 
-    /* IE & Edge (legacy) */
-    -ms-overflow-style: none;
+
     padding: 0 2px;
 }
 
 .form-container::-webkit-scrollbar {
-    display: none;
-    width: 50px;
+    width: 6px;
+    /* exists but small */
 }
+
+.form-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.form-container:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+
 
 .sign-up-text h3 {
     text-align: center;
@@ -530,17 +543,19 @@ body::-webkit-scrollbar-thumb {
     /* success */
 }
 
-.terms-and-condition{
+.terms-and-condition {
     padding: 1rem 0 .2rem 0;
 }
+
 .terms-and-condition:hover .checkmark {
     border-color: var(--color-border);
 }
 
-.terms-and-condition input:focus-visible + .checkmark {
+.terms-and-condition input:focus-visible+.checkmark {
     outline: 2px solid var(--color-border);
     outline-offset: 2px;
 }
+
 .custom-checkbox {
     display: flex;
     align-items: center;
@@ -578,29 +593,32 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* checked state */
-.custom-checkbox input:checked + .checkmark {
+.custom-checkbox input:checked+.checkmark {
     background-color: var(--color-text);
     border-color: var(--color-border);
 }
 
-.custom-checkbox input:checked + .checkmark::after {
+.custom-checkbox input:checked+.checkmark::after {
     opacity: 1;
     transform: scale(1);
 }
-.checkbox-text{
+
+.checkbox-text {
     color: var(--color-text);
 }
-.checkbox-text a{
+
+.checkbox-text a {
     color: var(--color-text);
 
 }
-.checkbox-text a:hover{
+
+.checkbox-text a:hover {
     text-decoration: underline;
 
 }
 
 
-.sign-up-button{
+.sign-up-button {
     display: flex;
     justify-content: center;
     padding-top: 1rem;
@@ -625,4 +643,254 @@ body::-webkit-scrollbar-thumb {
 }
 
 
+@media screen and (max-width: 1024px){
+    
+    /* SIGN UP FORM */
+    .sign-up-container {
+    height: calc(100vh - 220px);
+    }
+}
+@media screen and (max-width: 768px) {
+    .authentication-logo-text h3 {
+        padding-top: .2rem;
+        font-size: 1.2rem;
+    }
 
+    .go-home a {
+        font-size: .8rem;
+    }
+
+    /* SIGN UP FORM */
+    .sign-up-container {
+    height: calc(100vh - 220px);
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .authentication-form-wrapper {
+        width: 450px;
+    }
+
+    .authentication-form-inner-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .authentication-form-inner-text h5 {
+        font-size: 1rem;
+    }
+
+    /* SIGN UP FORM */
+    .sign-up-wrapper a {
+        font-size: 1rem;
+    }
+
+
+
+    .sign-up-wrapper {
+        width: 450px;
+        height: auto;
+    }
+
+    .sign-up-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .sign-up-text p {
+        font-size: 1rem;
+    }
+
+    .form-container::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .checkbox-text span {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 475px) {
+
+    .authentication-form-wrapper,
+    .sign-up-wrapper {
+        width: 400px;
+        height: auto;
+    }
+
+    .form-container::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .checkbox-text span {
+        display: none;
+    }
+
+
+}
+
+@media screen and (max-width: 425px) {
+    .authentication-logo-text h3 {
+        padding-top: .2rem;
+        font-size: 1rem;
+    }
+
+    .go-home span,
+    .sign-up-wrapper-text span {
+        display: none;
+    }
+
+    .go-home a {
+        font-size: .9rem;
+    }
+
+    .authentication-form-wrapper {
+        width: 350px;
+        padding: 1.8rem .5rem .2rem;
+        height: auto;
+    }
+
+    .authentication-form-inner-text h3,
+    .sign-up-text h3 {
+        font-size: 1.25rem;
+    }
+
+    .authentication-form-inner-text h5,
+    .sign-up-text p {
+        font-size: .9rem;
+    }
+
+    .authentication-form-inner form {
+        padding-top: .5rem !important;
+    }
+
+    .log-in-wrapper label,
+    .sign-up-wrapper-form label {
+        font-size: .8rem;
+    }
+
+    .forgot-password a,
+    .terms-and-condition span,
+    .terms-and-condition span a {
+        font-size: .8rem;
+    }
+
+    .log-in-button button,
+    .sign-up-button button {
+        font-size: .9rem;
+    }
+
+    .log-in-button i,
+    .sign-up-button i {
+        font-size: .9rem;
+    }
+
+
+
+    /* SIGN UP FORM */
+    .sign-up-wrapper {
+        width: 350px;
+    }
+
+
+    .terms-and-condition .custom-checkbox {
+        transform: scale(0.9);
+        transform-origin: left center;
+    }
+
+    .form-container::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .checkbox-text span {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .authentication-logo-text h3 {
+        font-size: 1rem;
+
+    }
+
+    .authentication-logo-text h5 {
+        font-size: .9rem;
+    }
+
+    .go-home a {
+        font-size: .9rem;
+    }
+
+    .authentication-form-wrapper {
+        width: 320px;
+        padding: 1.5rem .5rem .1rem;
+        height: auto;
+    }
+
+    .authentication-form-inner-text h3,
+    .sign-up-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .authentication-form-inner-text h5,
+    .sign-up-text p {
+        font-size: .8rem;
+    }
+
+    .log-in-wrapper label,
+    .sign-up-wrapper-form label {
+        font-size: .7rem;
+    }
+
+    .create-account-wrapper p {
+        font-size: .9rem;
+    }
+
+    /* SIGN UP FORM */
+    .sign-up-wrapper {
+        width: 320px;
+        height: auto;
+    }
+
+    .form-container::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .terms-and-condition span,
+    .terms-and-condition span a {
+        font-size: .8rem;
+    }
+        .terms-and-condition .custom-checkbox {
+        transform: scale(0.9);
+        transform-origin: left center;
+    }
+
+
+    .checkbox-text span {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .authentication-form-wrapper {
+        width: 290px;
+        padding: 1.5rem .5rem .1rem;
+        height: auto;
+    }
+
+    .sign-up-wrapper {
+        width: 290px;
+    }
+
+        .terms-and-condition .custom-checkbox {
+        transform: scale(0.9);
+        transform-origin: left center;
+    }
+
+    .checkbox-text span {
+        display: none;
+    }
+
+
+
+}

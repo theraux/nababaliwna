@@ -26,7 +26,7 @@
     <div class="authentication-main-container">
         <div class="authentication-main-container-inner">
             <div class="authentication-logo-container">
-                <div class="authentication-logo-wrapper">
+                <div class="authentication-logo-wrapper ">
                     <img src="../../assets/images/user-interface/banners-images-logo/logo.png" alt="Clinic Logo" />
                 </div>
                 <div class="authentication-logo-text">
@@ -34,7 +34,7 @@
                     <h5>Dental Clinic</h5>
                 </div>
                 <div class="go-home d-flex ms-auto">
-                    <a href="../user-interface/index.php"><i class="fa-solid fa-reply"></i> Back to Home</a>
+                    <a href="../user-interface/index.php"><i class="fa-solid fa-reply"></i><span> Back to </span> Home</a>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                     <div class="log-in-wrapper">
-                                        <label for="password">PASSWORD</label>
+                                        <label for="log-in-password">PASSWORD</label>
                                         <div class="input-with-icon">
                                             <i class="fa-solid fa-lock input-icon"></i>
                                             <input type="password" id="log-in-password" name="password" class="password-input"
@@ -87,9 +87,12 @@
 
                 <!-- Sign-Up Form -->
                 <div class="sign-up-container" id="signUp">
-                    <div class="sign-up-wrapper ">
+                    <div class="sign-up-wrapper">
+                        <div class="sign-up-wrapper-text">
                         <a href="#" id="backToSignIn" title="Back to Sign In"><i class="fa-solid fa-arrow-left"></i>
-                            Back to Sign In</a>
+                            Back <span> to Sign In </span></a>
+                        </div>
+                       
                         <div class="sign-up-inner  pt-3">
 
                             <div class="sign-up-text">
@@ -133,16 +136,7 @@
 
 
                                         <div class="sign-up-wrapper-form">
-                                            <label for="username">Username</label>
-                                            <div class="input-with-icon">
-                                                <i class="fa-solid fa-user input-icon"></i>
-                                                <input type="text" id="username" name="username"
-                                                    placeholder="example123" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="sign-up-wrapper-form">
-                                            <label for="password">Password</label>
+                                            <label for="password">PASSWORD</label>
                                             <div class="input-with-icon">
                                                 <i class="fa-solid fa-lock input-icon"></i>
                                                 <input type="password" id="password" name="password" class="password-input"
@@ -158,11 +152,11 @@
                                         </div>
 
                                         <div class="sign-up-wrapper-form">
-                                            <label for="confirm-password">Confirm Password</label>
+                                            <label for="confirm-password">CONFIRM PASSWORD</label>
                                             <div class="input-with-icon">
                                                 <i class="fa-solid fa-lock input-icon"></i>
                                                 <input type="password" id="confirm-password" name="confirm-password" class="password-input"
-                                                    placeholder="Confirm your Password" required>
+                                                    placeholder="Confirm Password" required>
                                                     <i class="fa-solid fa-eye toggle-password"></i>
                                             </div>
                                             <small class="confirm-password-msg" id="confirmPasswordMsg">
@@ -175,8 +169,8 @@
                                                 <input type="checkbox" id="TermsAndCondtionSignUp" required>
                                                 <span class="checkmark"></span>
 
-                                                <span class="checkbox-text">I agree to the <a href="#" id="">Terms and
-                                                        Conditions</a> </span>
+                                                <div class="checkbox-text"><span>I agree to the</span> <a href="#" id="">Terms and
+                                                        Conditions</a> </div>
                                             </label>
                                         </div>
 

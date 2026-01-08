@@ -35,7 +35,7 @@
                     <h5>Dental Clinic</h5>
                 </div>
                 <div class="go-home d-flex ms-auto">
-                    <a href="../user-interface/index.php"><i class="fa-solid fa-reply"></i> Back to Home</a>
+                    <a href="../user-interface/index.php"><i class="fa-solid fa-reply"></i> <span>Back to</span> Home</a>
                 </div>
             </div>
 
@@ -75,9 +75,9 @@
 
                                     <div class="forgot-password-wrapper-verification">
                                         <h6>Verification Code</h6>
-                                        <div class="forgot-password ">
+                                        <div class="forgot-password  ">
                                             <button type="button" id="sendCodeBtn">
-                                                Send Code
+                                                Send <span> Code </span>
                                             </button>
                                             <small id="timerText">
                                                 Resend available in <span id="timer">60</span>s
@@ -93,8 +93,8 @@
                                     </div>
                                 </div>
                                 <div class="create-account-container">
-                                    <div class="create-account-wrapper">
-                                        <p>Remember your password? <a href="../user-interface/authentication.php">Sign
+                                    <div class="back-to-sign-in-wrapper">
+                                        <p>Remember <span> your </span> password? <a href="../user-interface/authentication.php">Sign
                                                 In</a></p>
                                     </div>
                                 </div>
@@ -103,9 +103,9 @@
                     </div>
                 </div>
 
-                <div class="reset-password-form-container" id="resetPassword">
-                    <div class="reset-password-form-wrapper">
-                        <div class="reset-password-inner">
+                <div class="reset-password-form-container pt-3" id="resetPassword">
+                    <div class="reset-password-form-wrapper ">
+                        <div class="reset-password-inner pt-3">
                             <h3>Create a new password</h3>
                             <h5>You’re almost back in. Set your new password.</h5>
                         </div>
